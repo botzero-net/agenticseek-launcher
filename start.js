@@ -38,11 +38,10 @@ module.exports = {
       params: {
         path: "app/frontend/agentic-seek-front",
         env: {
-          "REACT_APP_BACKEND_URL": "http://localhost:7777",
-          "HOST": "localhost"
+          "REACT_APP_BACKEND_URL": "http://localhost:7777"
         },
         message: [
-          "npm start"
+          "export HOST=127.0.0.1 && npm start"
         ],
         on: [{
           event: "/(http:\\/\\/[0-9.:]+)/",
