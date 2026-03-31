@@ -11,6 +11,14 @@ module.exports = {
     {
       method: "shell.run",
       params: {
+        message: [
+          "conda install -y -c conda-forge portaudio"
+        ]
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
         venv: "venv",
         path: "app",
         message: [
