@@ -13,7 +13,7 @@ This is a 1-click launcher for [AgenticSeek](https://github.com/Fosowl/agenticSe
 
 - **Python 3.10+** (Recommended)
 - **Node.js & npm**
-- **Docker Desktop** (Required for SearxNG local search and Redis)
+- **Docker Desktop** (Required ONLY if you use local SearxNG search)
 - **uv** (Optional, used for faster python dependency management)
 
 ## Installation
