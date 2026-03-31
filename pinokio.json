@@ -1,11 +1,5 @@
 {
   "title": "AgenticSeek",
   "description": "Fully Local Manus AI. No APIs, No Privacy Concerns.",
-  "icon": "icon.png",
-  "menu": [
-    "install.js",
-    "start.js",
-    "update.js",
-    "reset.js"
-  ]
+  "icon": "icon.png"
 }
