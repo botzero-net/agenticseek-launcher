@@ -1,0 +1,8 @@
+# Pinokio terminal-generated files
+/.pinokio-terminal.json
+/.pinokio/skills/active.md
+/.agents/skills/
+app/
+venv/
+node_modules/
+.env
