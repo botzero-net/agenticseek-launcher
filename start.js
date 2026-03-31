@@ -4,6 +4,24 @@ module.exports = {
     {
       method: "shell.run",
       params: {
+        message: [
+          "redis-server"
+        ],
+        on: [
+          {
+            event: "/Ready to accept connections/",
+            done: true
+          },
+          {
+            event: "/Address already in use/",
+            done: true
+          }
+        ]
+      }
+    },
+    {
+      method: "shell.run",
+      params: {
         venv: "venv",
         path: "app",
         message: [

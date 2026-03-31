@@ -6,3 +6,4 @@ app/
 venv/
 node_modules/
 .env
+dump.rdb

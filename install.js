@@ -22,7 +22,7 @@ module.exports = {
         venv: "venv",
         path: "app",
         message: [
-          "pip install -r requirements.txt"
+          "uv pip install -r requirements.txt"
         ]
       }
     },
@@ -47,7 +47,7 @@ module.exports = {
     {
       method: "notify",
       params: {
-        html: "Installation finished! Please make sure you have <b>Docker</b> installed if you want to use the local search service (SearxNG)."
+        html: "Installation finished! Use 'Config' to set your LLM Provider, and 'Env' to set API Keys. Ensure Docker is running if using local SearxNG search."
       }
     }
   ]

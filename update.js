@@ -5,7 +5,9 @@ module.exports = {
       params: {
         path: "app",
         message: [
-          "git pull"
+          "git stash || true",
+          "git pull",
+          "git stash pop || true"
         ]
       }
     },
@@ -23,7 +25,7 @@ module.exports = {
         venv: "venv",
         path: "app",
         message: [
-          "pip install -r requirements.txt"
+          "uv pip install -r requirements.txt"
         ]
       }
     },
