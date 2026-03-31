@@ -38,7 +38,8 @@ module.exports = {
       params: {
         path: "app/frontend/agentic-seek-front",
         env: {
-          "REACT_APP_BACKEND_URL": "http://localhost:7777"
+          "REACT_APP_BACKEND_URL": "http://localhost:7777",
+          "HOST": "localhost"
         },
         message: [
           "npm start"
