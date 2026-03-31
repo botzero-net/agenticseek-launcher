@@ -35,16 +35,6 @@ module.exports = {
               icon: 'fa-solid fa-terminal',
               text: "Terminal",
               href: "start.js",
-            },
-            {
-              icon: "fa-solid fa-cog",
-              text: "Config (.ini)",
-              href: "app/config.ini"
-            },
-            {
-              icon: "fa-solid fa-key",
-              text: "Env (.env)",
-              href: "app/.env"
             }
           ]
         } else {
@@ -54,16 +44,6 @@ module.exports = {
               icon: 'fa-solid fa-terminal',
               text: "Terminal",
               href: "start.js",
-            },
-            {
-              icon: "fa-solid fa-cog",
-              text: "Config (.ini)",
-              href: "app/config.ini"
-            },
-            {
-              icon: "fa-solid fa-key",
-              text: "Env (.env)",
-              href: "app/.env"
             }
           ]
         }
@@ -103,16 +83,6 @@ module.exports = {
             icon: "fa-regular fa-circle-xmark",
             text: "Reset",
             href: "reset.js",
-          },
-          {
-            icon: "fa-solid fa-cog",
-            text: "Config (.ini)",
-            href: "app/config.ini"
-          },
-          {
-            icon: "fa-solid fa-key",
-            text: "Env (.env)",
-            href: "app/.env"
           }
         ]
       }
