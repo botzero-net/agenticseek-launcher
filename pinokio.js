@@ -1,78 +1,88 @@
 const path = require('path')
-module.exports = (info) => {
-  let installed = info.exists("app/venv")
-  let running = info.running("start.js")
-  if (installed) {
-    if (running) {
-      let local = info.local("start.js")
-      if (local && local.url) {
-        return [
-          {
+module.exports = {
+  version: "3.3",
+  title: "AgenticSeek",
+  description: "Fully Local Manus AI. No APIs, No Privacy Concerns.",
+  icon: "icon.png",
+  menu: async (kernel, info) => {
+    let installed = info.exists("app/venv") || info.exists("app/env") || info.exists("app/frontend/agentic-seek-front/node_modules")
+    let running = {
+      install: info.running("install.js"),
+      start: info.running("start.js"),
+      update: info.running("update.js"),
+      reset: info.running("reset.js")
+    }
+
+    if (running.install) {
+      return [{
+        default: true,
+        icon: "fa-solid fa-plug",
+        text: "Installing",
+        href: "install.js",
+      }]
+    } else if (installed) {
+      if (running.start) {
+        let local = info.local("start.js")
+        if (local && local.url) {
+          return [{
             default: true,
             icon: "fa-solid fa-rocket",
-            text: "Open WebUI",
-            href: local.url
-          },
-          {
-            icon: "fa-solid fa-terminal",
+            text: "Open Web UI",
+            href: local.url,
+          }, {
+            icon: 'fa-solid fa-terminal',
             text: "Terminal",
-            href: "start.js"
-          },
-          {
-            icon: "fa-solid fa-stop",
-            text: "Stop",
             href: "start.js",
-            params: {
-              stop: true
-            }
-          }
-        ]
-      } else {
-        return [
-          {
+          }]
+        } else {
+          return [{
             default: true,
-            icon: "fa-solid fa-terminal",
+            icon: 'fa-solid fa-terminal',
             text: "Terminal",
-            href: "start.js"
-          },
-          {
-            icon: "fa-solid fa-stop",
-            text: "Stop",
             href: "start.js",
-            params: {
-              stop: true
-            }
-          }
-        ]
+          }]
+        }
+      } else if (running.update) {
+        return [{
+          default: true,
+          icon: 'fa-solid fa-terminal',
+          text: "Updating",
+          href: "update.js",
+        }]
+      } else if (running.reset) {
+        return [{
+          default: true,
+          icon: 'fa-solid fa-terminal',
+          text: "Resetting",
+          href: "reset.js",
+        }]
+      } else {
+        return [{
+          default: true,
+          icon: "fa-solid fa-power-off",
+          text: "Start",
+          href: "start.js",
+        }, {
+          icon: "fa-solid fa-plug",
+          text: "Update",
+          href: "update.js",
+        }, {
+          icon: "fa-solid fa-plug",
+          text: "Install",
+          href: "install.js",
+        }, {
+          icon: "fa-regular fa-circle-xmark",
+          text: "Reset",
+          href: "reset.js",
+        }]
       }
     } else {
-      return [
-        {
-          default: true,
-          icon: "fa-solid fa-play",
-          text: "Start",
-          href: "start.js"
-        },
-        {
-          icon: "fa-solid fa-rotate",
-          text: "Update",
-          href: "update.js"
-        },
-        {
-          icon: "fa-solid fa-trash",
-          text: "Reset",
-          href: "reset.js"
-        }
-      ]
-    }
-  } else {
-    return [
-      {
+      return [{
         default: true,
-        icon: "fa-solid fa-download",
+        icon: "fa-solid fa-plug",
         text: "Install",
-        href: "install.js"
-      }
-    ]
+        href: "install.js",
+      }]
+    }
   }
 }
